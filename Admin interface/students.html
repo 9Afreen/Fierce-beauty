@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Students - Beauty Academy Admin</title>
+  <link rel="stylesheet" href="students.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Beauty Academy</h2>
+    <ul>
+      <li><a href="admin.html">Dashboard</a></li>
+      <li><a href="students.html" class="active">Students</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="instructors.html">Instructors</a></li>
+      <li><a href="logout.html">Logout</a></li>
+
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <h1>Students</h1>
+      <button class="add-btn" onclick="openForm()">+ Add Student</button>
+    </header>
+
+    <table id="studentsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Course Enrolled</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Students will appear here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Hidden Form Popup -->
+  <div id="form-popup" class="form-popup">
+    <form id="studentForm" class="form-container" onsubmit="handleSubmit(event)">
+      <h2 id="formTitle">Add New Student</h2>
+
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="phone" placeholder="Phone (e.g. +1 2345678901)" required>
+      <input type="text" id="course" placeholder="Course Enrolled" required>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Add Student</button>
+      <button type="button" class="close-btn" onclick="closeForm()">Cancel</button>
+    </form>
+  </div>
+
+  <script src="students.js"></script>
+</body>
+</html>

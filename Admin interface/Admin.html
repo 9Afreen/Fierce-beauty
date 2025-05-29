@@ -1,0 +1,50 @@
+<?php 
+    include("connection.php");
+    include("signup.php")
+    ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard - Beauty Academy</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Beauty Academy</h2>
+    <ul>
+      <li><a href="admin.html" class="active">Dashboard</a></li>
+      <li><a href="students.html">Students</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="instructors.html">Instructors</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <h1>Admin Dashboard</h1>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h2>05</h2>
+        <p>Registered Students</p>
+      </div>
+      <div class="stat-card">
+        <h2>4</h2>
+        <p>Available Courses</p>
+      </div>
+      <div class="stat-card">
+        <h2>03</h2>
+        <p>Instructors</p>
+      </div>
+      <div class="stat-card">
+        <h2>20</h2>
+        <p>Upcoming Events</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beauty Academy Dashboard</title>
+  <link rel="stylesheet" href="MyCourses.css" />
+
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h2>Beauty Academy</h2>
+      <nav>
+        <a href="DashB.php">Dashboard</a>
+        <a href="MyCourses.html" class="active">My Courses</a>
+        <a href="Profile.html">Profile</a>
+        <a href="logout.html">Logout</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header>
+        <h1>Welcome!</h1>
+        <p>Your current courses and progress are shown below.</p>
+      </header>
+
+      <!-- My Courses Section -->
+      <section class="my-courses">
+        <h2>My Courses</h2>
+        <div id="course-list"></div>
+
+        <!-- Shown if no courses -->
+        <div id="empty-state" class="empty-state">
+          <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" alt="No Courses" />
+          <!-- <h3>No Courses Added Yet</h3> -->
+          <p>Browse available courses and enroll to begin your beauty journey.</p>
+          <a href="user/UserCourse.html" class="browse-button">Browse Courses</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Simulated course data (leave empty to trigger empty state)
+    const myCourses = []; // Example: [{ title: 'Makeup Mastery' }, { title: 'Hair Styling Basics' }]
+
+    const courseList = document.getElementById('course-list');
+    const emptyState = document.getElementById('empty-state');
+
+    if (myCourses.length === 0) {
+      emptyState.style.display = 'flex';
+    } else {
+      myCourses.forEach(course => {
+        const courseCard = document.createElement('div');
+        courseCard.className = 'course-card';
+        courseCard.innerHTML = `<h3>${course.title}</h3><p>Starts soon. Get ready!</p>`;
+        courseList.appendChild(courseCard);
+      });
+    }
+  </script>
+</body>
+</html>
